@@ -20,9 +20,11 @@ TELEGRAM_CHAT_ID = env["TELEGRAM_CHAT_ID"]
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
     level=logging.INFO,
-    handler=(logging.FileHandler("output.log"),
-             logging.StreamHandler(sys.stdout))
-)
+    filename='homework.log')
+handler = (
+    logging.FileHandler("output.log"),
+    logging.StreamHandler(sys.stdout))
+
 
 logger = logging.getLogger(__name__)
 
