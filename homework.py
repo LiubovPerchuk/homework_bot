@@ -9,13 +9,13 @@ from dotenv import dotenv_values
 
 from exceptions import (EmptyResponseFromAPI, KeyErrorStatus)
 
-env = {
+config = {
     **dotenv_values(".env"),
 }
 
-PRACTICUM_TOKEN = env["PRACTICUM_TOKEN"]
-TELEGRAM_TOKEN = env["TELEGRAM_TOKEN"]
-TELEGRAM_CHAT_ID = env["TELEGRAM_CHAT_ID"]
+PRACTICUM_TOKEN = config["PRACTICUM_TOKEN"]
+TELEGRAM_TOKEN = config["TELEGRAM_TOKEN"]
+TELEGRAM_CHAT_ID = config["TELEGRAM_CHAT_ID"]
 
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
