@@ -11,9 +11,9 @@ from exceptions import (EmptyResponseFromAPI, KeyErrorStatus)
 
 config = dotenv_values(".env")
 
-PRACTICUM_TOKEN = config["PRACTICUM_TOKEN"]
-TELEGRAM_TOKEN = config["TELEGRAM_TOKEN"]
-TELEGRAM_CHAT_ID = config["TELEGRAM_CHAT_ID"]
+PRACTICUM_TOKEN = config.get("PRACTICUM_TOKEN")
+TELEGRAM_TOKEN = config.get("TELEGRAM_TOKEN")
+TELEGRAM_CHAT_ID = config.get("TELEGRAM_CHAT_ID")
 
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
