@@ -9,9 +9,7 @@ from dotenv import dotenv_values
 
 from exceptions import (EmptyResponseFromAPI, KeyErrorStatus)
 
-config = {
-    **dotenv_values(".env"),
-}
+config = dotenv_values(".env")
 
 PRACTICUM_TOKEN = config["PRACTICUM_TOKEN"]
 TELEGRAM_TOKEN = config["TELEGRAM_TOKEN"]
@@ -19,8 +17,7 @@ TELEGRAM_CHAT_ID = config["TELEGRAM_CHAT_ID"]
 
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-    level=logging.INFO,
-    filename='homework.log')
+    level=logging.INFO)
 handler = (
     logging.FileHandler("output.log"),
     logging.StreamHandler(sys.stdout))
